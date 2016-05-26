@@ -18,7 +18,7 @@ Backoff is a counter. It starts at `min`. After every call to `duration()` it is
 #### Simple example
 
 ``` python
-from justbackoff import Backoff, to_ms
+from justbackoff import Backoff
 
 b = Backoff(min=100, max=10000, factor=2, jitter=False)
 
@@ -79,7 +79,7 @@ Enabling `jitter` adds some randomization to the backoff durations. [See Amazon'
 ```python
 import random
 
-from justbackoff import Backoff, to_ms
+from justbackoff import Backoff
 
 b = Backoff(min=100, max=10000, factor=2, jitter=True)
 
