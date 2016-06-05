@@ -11,7 +11,10 @@ $ pip install justbackoff
 
 ### Usage
 
-Backoff is a counter. It starts at `min`. After every call to `duration()` it is multiplied by `factor`. It is capped at `max`. It returns to `min` on every call to `reset()`. `jitter` adds randomness ([see below](#example-using-jitter)).
+Backoff is a counter. It starts at `min_ms`. After every call to `duration()`,
+it is multiplied by `factor`. It is capped at `max_ms`.
+It returns to `min_ms` on every call to `reset()`.
+`jitter` adds randomness ([see below](#example-using-jitter)).
 
 ---
 
@@ -20,7 +23,7 @@ Backoff is a counter. It starts at `min`. After every call to `duration()` it is
 ``` python
 from justbackoff import Backoff
 
-b = Backoff(min=100, max=10000, factor=2, jitter=False)
+b = Backoff(min_ms=100, max_ms=10000, factor=2, jitter=False)
 
 print(b.duration())
 print(b.duration())
@@ -74,14 +77,16 @@ while True:
 
 #### Example using `jitter`
 
-Enabling `jitter` adds some randomization to the backoff durations. [See Amazon's writeup of performance gains using jitter](http://www.awsarchitectureblog.com/2015/03/backoff.html). Seeding is not necessary but doing so gives repeatable results.
+Enabling `jitter` adds some randomization to the backoff durations.
+[See Amazon's writeup of performance gains using jitter](http://www.awsarchitectureblog.com/2015/03/backoff.html).
+Seeding is not necessary but doing so gives repeatable results.
 
 ```python
 import random
 
 from justbackoff import Backoff
 
-b = Backoff(min=100, max=10000, factor=2, jitter=True)
+b = Backoff(min_ms=100, max_ms=10000, factor=2, jitter=True)
 
 random.seed(42)
 
