@@ -1,5 +1,7 @@
 # justbackoff
 
+[![Build Status](https://travis-ci.org/admiralobvious/justbackoff.png?branch=master)](https://travis-ci.org/admiralobvious/justbackoff)
+
 A simple backoff algorithm in Python
 
 
