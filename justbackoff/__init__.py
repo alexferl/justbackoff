@@ -1,4 +1,3 @@
-import math
 import random
 
 
@@ -84,7 +83,7 @@ class Backoff(object):
         :return: duration in seconds
         :rtype: float
         """
-        dur = float(self.min_ms * math.pow(self.factor, attempt))
+        dur = float(self.min_ms * pow(self.factor, attempt))
 
         if self.jitter:
             dur = random.random() * (dur - self.min_ms) + self.min_ms
