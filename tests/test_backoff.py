@@ -4,19 +4,17 @@ from justbackoff import Backoff, to_seconds
 
 
 class CustomAssertions(object):
-
     @staticmethod
     def assert_between(actual, low, high):
         if actual < low:
-            raise AssertionError('Got {}, expecting >= {}'.format(actual, low))
+            raise AssertionError("Got {}, expecting >= {}".format(actual, low))
 
         if actual > high:
-            msg = 'Got {}, expecting <= {}'.format(actual, high)
+            msg = "Got {}, expecting <= {}".format(actual, high)
             raise AssertionError(msg)
 
 
 class TestBackoff(unittest.TestCase, CustomAssertions):
-
     def setUp(self):
         self.b = Backoff(min_ms=100.0, max_ms=10000.0, factor=2.0)
 

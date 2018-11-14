@@ -26,7 +26,6 @@ def to_ms(seconds):
 
 
 class Backoff(object):
-
     def __init__(self, min_ms=100.0, max_ms=10000.0, factor=2.0, jitter=False):
         """
         :class:`Backoff` is a counter. It starts at :attr:`min_ms`.
