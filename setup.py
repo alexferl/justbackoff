@@ -19,6 +19,8 @@ setup(
     packages=['justbackoff'],
     zip_safe=False,
     include_package_data=True,
+    setup_requires=["pytest-runner==4.2"],
+    tests_require=["pytest==3.10.1"],
     platforms='any',
     classifiers=[
         'Intended Audience :: Developers',
