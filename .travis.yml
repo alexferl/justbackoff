@@ -7,4 +7,6 @@ python:
   - "3.5"
   - "3.6"
   - "3.7"
+cache: pip
+install: pip install -r dev_requirements.txt
 script: python setup.py test
