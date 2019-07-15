@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/admiralobvious/justbackoff.svg?branch=master)](https://travis-ci.org/admiralobvious/justbackoff)
 
-A simple backoff algorithm in Python 2.x/3.x
+A simple backoff algorithm for Python 3.x.
 
 
 ### Install
