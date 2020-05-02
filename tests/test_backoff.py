@@ -1,6 +1,6 @@
 import unittest
 
-from justbackoff import Backoff, to_seconds
+from justbackoff import Backoff, to_ms, to_seconds
 
 
 class CustomAssertions:
@@ -71,3 +71,15 @@ class TestBackoff(unittest.TestCase, CustomAssertions):
         self.assertEqual(b.duration(), to_seconds(400.0))
         b.reset()
         self.assertEqual(b.duration(), to_seconds(100.0))
+
+    def test_to_ms(self):
+        self.assertEqual(10000, to_ms(10.0))
+
+    def test_min_bigger_than_max(self):
+        b = Backoff(min_ms=10000.0, max_ms=1000.0, factor=2)
+
+        self.assertEqual(b.duration(), 1.0)
+        self.assertEqual(b.duration(), 1.0)
+        self.assertEqual(b.duration(), 1.0)
+        b.reset()
+        self.assertEqual(b.duration(), 1.0)
