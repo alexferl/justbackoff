@@ -3,9 +3,9 @@ import unittest
 from justbackoff import Backoff, to_seconds
 
 
-class CustomAssertions(object):
+class CustomAssertions:
     @staticmethod
-    def assert_between(actual, low, high):
+    def assert_between(actual: float, low: float, high: float):
         if actual < low:
             raise AssertionError("Got {}, expecting >= {}".format(actual, low))
 

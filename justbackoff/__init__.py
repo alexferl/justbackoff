@@ -1,7 +1,7 @@
 import random
 
 
-def to_seconds(milliseconds):
+def to_seconds(milliseconds: float) -> float:
     """
     :func:`to_seconds` Converts :param:`milliseconds` to seconds.
 
@@ -13,7 +13,7 @@ def to_seconds(milliseconds):
     return milliseconds / 1000.0
 
 
-def to_ms(seconds):
+def to_ms(seconds: float) -> float:
     """
     :func:`to_ms` Converts :param:`seconds` to milliseconds.
 
@@ -25,8 +25,14 @@ def to_ms(seconds):
     return seconds * 1000.0
 
 
-class Backoff(object):
-    def __init__(self, min_ms=100.0, max_ms=10000.0, factor=2.0, jitter=False):
+class Backoff:
+    def __init__(
+        self,
+        min_ms: float = 100.0,
+        max_ms: float = 10000.0,
+        factor: float = 2.0,
+        jitter: bool = False,
+    ):
         """
         :class:`Backoff` is a counter. It starts at :attr:`min_ms`.
         After every call to :meth:`duration` it is multiplied by
@@ -56,7 +62,7 @@ class Backoff(object):
 
         self.cur_attempt = 0.0
 
-    def duration(self):
+    def duration(self) -> float:
         """
         Returns the current value of the counter and then multiplies it by
         :attr:`factor`
@@ -67,7 +73,7 @@ class Backoff(object):
         self.cur_attempt += 1
         return d
 
-    def for_attempt(self, attempt):
+    def for_attempt(self, attempt: float) -> float:
         """
         :meth:`for_attempt` returns the duration for a specific attempt.
         This is useful if you have a large number of independent backoffs,
@@ -98,7 +104,7 @@ class Backoff(object):
         """
         self.cur_attempt = round(to_seconds(self.min_ms))
 
-    def attempt(self):
+    def attempt(self) -> float:
         """
         Returns the current backoff attempt.
 

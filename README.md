@@ -2,12 +2,12 @@
 
 [![Build Status](https://travis-ci.org/admiralobvious/justbackoff.svg?branch=master)](https://travis-ci.org/admiralobvious/justbackoff)
 
-A simple backoff algorithm for Python 3.x.
+A simple backoff algorithm for Python >3.6.
 
 
 ### Install
 
-```
+```shell script
 $ pip install justbackoff
 ```
 
@@ -38,7 +38,7 @@ print(b.duration())
 
 ```
 
-```
+``` shell script
 0.1
 0.2
 0.4
@@ -104,7 +104,7 @@ print(b.duration())
 print(b.duration())
 ```
 
-```
+``` shell script
 0.1
 0.102501075522
 0.182508795511
@@ -116,4 +116,4 @@ Reset!
 
 #### Credits
 
-Ported from Go (golang) [backoff](https://github.com/jpillora/backoff)
+Ported from Go [backoff](https://github.com/jpillora/backoff)
