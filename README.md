@@ -1,4 +1,4 @@
-# justbackoff [![Build Status](https://travis-ci.com/admiralobvious/justbackoff.svg?branch=master)](https://travis-ci.com/admiralobvious/justbackoff) [![codecov](https://codecov.io/gh/admiralobvious/justbackoff/branch/master/graph/badge.svg)](https://codecov.io/gh/admiralobvious/justbackoff)
+# justbackoff [![Build Status](https://travis-ci.com/alexferl/justbackoff.svg?branch=master)](https://travis-ci.com/alexferl/justbackoff) [![codecov](https://codecov.io/gh/alexferl/justbackoff/branch/master/graph/badge.svg)](https://codecov.io/gh/alexferl/justbackoff)
 
 A simple backoff algorithm for Python >3.6.
 
